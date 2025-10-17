@@ -69,5 +69,6 @@ int main(int argc, char *argv[]) {
     }
 
     output_file(dbfd, header);
+
     return 0;
 }
