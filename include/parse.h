@@ -6,6 +6,8 @@
 #define PARSE_H
 
 #define HEADER_MAGIC 0x4c4c4144
+#define NAME_LENGTH 256
+#define ADDRESS_LENGTH 256
 
 struct dbheader_t {
     unsigned int magic;
@@ -15,8 +17,8 @@ struct dbheader_t {
 };
 
 struct employee_t {
-    char name[256];
-    char address[256];
+    char name[NAME_LENGTH];
+    char address[ADDRESS_LENGTH];
     unsigned int hours;
 };
 
