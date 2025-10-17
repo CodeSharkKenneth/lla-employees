@@ -2,7 +2,10 @@
 // Created by rabiddog on 10/17/25.
 //
 
-#ifndef LLA_EMPLOYEES_FILE_H
-#define LLA_EMPLOYEES_FILE_H
+#ifndef FILE_H
+#define FILE_H
 
-#endif //LLA_EMPLOYEES_FILE_H
+int create_db_file(char *filename);
+int open_db_file(char *filename);
+
+#endif //FILE_H

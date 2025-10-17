@@ -2,7 +2,10 @@
 // Created by rabiddog on 10/17/25.
 //
 
-#ifndef LLA_EMPLOYEES_COMMON_H
-#define LLA_EMPLOYEES_COMMON_H
+#ifndef COMMON_H
+#define COMMON_H
 
-#endif //LLA_EMPLOYEES_COMMON_H
+#define STATUS_ERROR     -1
+#define STATUS_SUCCESS    0
+
+#endif //COMMON_H
