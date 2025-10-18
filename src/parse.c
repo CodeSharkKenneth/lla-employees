@@ -52,16 +52,8 @@ int add_employee(struct dbheader_t *header, struct employee_t **employees, char 
 	header->count++;
 
 	int currentIndex = header->count -1;
-
-	printf("%d\n", sizeof(e[currentIndex].address) - 1);
-	printf("%d\n", sizeof(address-1));
-
     strncpy(e[currentIndex].name, name, sizeof(e[currentIndex].name) -1);
-	printf("%s\n", e[currentIndex].name);
-
     strncpy(e[currentIndex].address, address, sizeof(e[currentIndex].address) - 1);
-	printf("%s\n", e[currentIndex].address);
-
     e[currentIndex].hours = atoi(hours);
 
 	*employees = e;
