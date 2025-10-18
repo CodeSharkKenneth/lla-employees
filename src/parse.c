@@ -13,6 +13,16 @@
 #include "common.h"
 #include "parse.h"
 
+void list_employees(struct dbheader_t *header, struct employee_t *employees){
+	int i = 0;
+	for(; i < header->count; i++){
+		printf("Employee %d\n", i);
+		printf("\tName: %s\n", employees[i].name);
+		printf("\tAddress: %s\n", employees[i].address);
+		printf("\tHours: %d\n", employees[i].hours);
+	}
+}
+
 int add_employee(struct dbheader_t *header, struct employee_t **employees, char *addstring){
 
 	if(NULL == header) return STATUS_ERROR;
@@ -22,9 +32,11 @@ int add_employee(struct dbheader_t *header, struct employee_t **employees, char 
 
     char *name = strtok(addstring, ",");
 	if(NULL == name) return STATUS_ERROR;
+	printf("%s\n", name);
 
     char *address = strtok(NULL, ",");
 	if(NULL == address) return STATUS_ERROR;
+	printf("%s\n", address);
 
     char *hours = strtok(NULL, ",");
 	if(NULL == hours) return STATUS_ERROR;
@@ -39,9 +51,18 @@ int add_employee(struct dbheader_t *header, struct employee_t **employees, char 
 
 	header->count++;
 
-    strncpy(e[header->count - 1].name, name, sizeof(e[header->count-1].name-1));
-    strncpy(e[header->count - 1].address, address, sizeof(e[header->count-1].address-1));
-    e[header->count - 1].hours = atoi(hours);
+	int currentIndex = header->count -1;
+
+	printf("%d\n", sizeof(e[currentIndex].address) - 1);
+	printf("%d\n", sizeof(address-1));
+
+    strncpy(e[currentIndex].name, name, sizeof(e[currentIndex].name) -1);
+	printf("%s\n", e[currentIndex].name);
+
+    strncpy(e[currentIndex].address, address, sizeof(e[currentIndex].address) - 1);
+	printf("%s\n", e[currentIndex].address);
+
+    e[currentIndex].hours = atoi(hours);
 
 	*employees = e;
 
